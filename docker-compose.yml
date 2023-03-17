@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  node:
+    container_name: node
+    build:
+      context: ./node-repo/capNode
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - 8080
+
+  front:
+    container_name: front_web
+    build:
+      context: ./frontend-repo/capweb
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    expose:
+      - 5173
+
+  flask:
+    container_name: flask
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000

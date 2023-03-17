@@ -4,6 +4,3 @@
 [submodule "flask"]
 	path = flask
 	url = https://github.com/TUK-CE-capstone-2023-session4-3/flask.git
-[submodule "node-repo"]
-	path = node-repo
-	url = https://github.com/TUK-CE-capstone-2023-session4-3/node-repo.git

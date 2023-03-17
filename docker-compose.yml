@@ -10,23 +10,19 @@ services:
       - "8080:8080"
     expose:
       - 8080
+    networks:
+      - network
 
   front:
     container_name: front_web
     build:
-      context: ./frontend-repo/capweb
+      context: ./frontend-repo/capweb/
       dockerfile: Dockerfile
-    ports:
-      - "5173:5173"
-    expose:
-      - 5173
+    networks:
+      - network
 
-  flask:
-    container_name: flask
-    build:
-      context: ./flask
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    expose:
-      - 8000
+networks:
+  network:
+
+volumes:
+  build_folder: null

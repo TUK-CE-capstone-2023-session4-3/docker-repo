@@ -16,8 +16,24 @@ services:
   front:
     container_name: front_web
     build:
-      context: ./frontend-repo/capweb/
+      context: ./frontend-repo/capWeb/
       dockerfile: Dockerfile
+    networks:
+      - network
+    ports:
+      - "5173:5173"
+    expose:
+      - 5173
+
+  flask:
+    container_name: flask
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
     networks:
       - network
 
